@@ -1,5 +1,7 @@
 <%= @game.current_player.name %> vs. <%= @game.enemy_player.name %>
 <p><%= @game.enemy_player.name %> HP=<%= @game.enemy_player.hp%></p>
+<p><%= @game.current_player.name %> HP=<%= @game.current_player.hp%></p>
+<p><%= @game.message %></p>
 
 <form action="/attack" method="post">
 	<input type="submit" value="attack">

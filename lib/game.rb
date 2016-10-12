@@ -1,8 +1,10 @@
 class Game
+	attr_accessor :message
 	def initialize(player_1,player_2)
 		@player_1 = player_1
 		@player_2 = player_2
 		@current_player = @player_1
+		@message = ""
 	end
 
 	def player_1
@@ -11,6 +13,10 @@ class Game
 
 	def player_2
 		@player_2
+	end
+
+	def update_message(string)
+		@message = string
 	end
 
 	def attack(player)

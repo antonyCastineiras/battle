@@ -25,11 +25,13 @@ class Battle < Sinatra::Base
 
   post '/attack' do
     $game.attack($game.enemy_player)
+    $game.update_message("#{$game.current_player.name} attacked #{$game.enemy_player.name}")
     redirect '/play'
   end
 
   post '/switch' do
     $game.switch_turn
+    $game.message = ""
     redirect '/play'
   end
 
