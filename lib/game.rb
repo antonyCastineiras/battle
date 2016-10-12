@@ -1,4 +1,13 @@
 class Game
+
+	def self.create(player1,player2)
+		@instance = Game.new(player1,player2)
+	end
+
+	def self.instance
+		@instance
+	end
+
 	attr_accessor :message
 	def initialize(player_1,player_2)
 		@player_1 = player_1
