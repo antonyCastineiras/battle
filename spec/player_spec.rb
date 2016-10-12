@@ -18,10 +18,4 @@ describe Player do
 		end
 	end
 
-	describe '#attack' do
-		it "reduces player's hp by 10" do
-			expect { subject.attack(player2) }.to change{ player2.hp }.by(-10)
-		end
-	end
-
 end
