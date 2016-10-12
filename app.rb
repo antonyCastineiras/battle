@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player.rb'
+require './lib/game.rb'
 
 class Battle < Sinatra::Base
   enable :sessions
@@ -23,9 +24,15 @@ class Battle < Sinatra::Base
   end
 
   post '/attack' do
-    $game.attack($game.player_2)
+    $game.attack($game.enemy_player)
     redirect '/play'
   end
+
+  post '/switch' do
+    $game.switch_turn
+    redirect '/play'
+  end
+
 
 
 
