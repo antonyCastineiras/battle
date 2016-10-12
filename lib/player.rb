@@ -5,4 +5,13 @@ class Player
 		@name = name
 		@hp = 100
 	end
+
+	def attack(player)
+		player.damage(10)
+	end
+
+	def damage(number)
+		self.hp -= number
+	end
+
 end
