@@ -1,4 +1,4 @@
-# require 'spec_helper'
+require 'spec_helper'
 
 feature 'Enter names' do
   scenario 'submitting names' do
