@@ -15,12 +15,18 @@ class Game
 		@player_2
 	end
 
+
 	def update_message(string)
 		@message = string
 	end
 
 	def attack(player)
 		player.damage(10)
+		if player.dead?
+			 update_message('Game over')
+		else
+			 update_message("#{current_player.name} attacked #{enemy_player.name}")
+		end
 	end
 
 	def current_player

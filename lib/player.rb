@@ -9,4 +9,9 @@ class Player
 	def damage(number)
 		self.hp -= number
 	end
+
+	def dead?
+		self.hp == 0
+	end
+
 end

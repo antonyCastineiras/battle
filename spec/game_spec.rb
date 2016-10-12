@@ -20,6 +20,7 @@ describe Game do
 
 	describe '#attack' do
 		it "reduces player's hp by 10" do
+			allow(player_2).to receive(:dead?)
 			expect(player_2).to receive(:damage)
 			subject.attack(player_2)
 		end
