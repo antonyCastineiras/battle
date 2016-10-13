@@ -4,6 +4,7 @@ class Game
 
   attr_reader :player, :current_player
 
+
   # def initialize(player = Player.new)
   #   @player = player
   # end
@@ -28,8 +29,12 @@ class Game
     @players.last
   end
 
-  def attack(player)
+  def attack
     enemy.receive_damage(rand(5..10))
+  end
+
+  def poison
+    enemy.poisoned = true
   end
 
   def enemy
@@ -38,5 +43,13 @@ class Game
 
   def switch_turn
     @current_player = enemy
-  end
+    if @current_player.poisoned == true
+       @current_player.receive_damage(2)
+       @current_player.poison_count += 1
+     end
+    if @current_player.poison_count == 3
+        @current_player.poisoned = false
+        @current_player.poison_count = 0
+      end
+    end
 end

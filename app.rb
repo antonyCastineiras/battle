@@ -22,12 +22,22 @@ class Battle < Sinatra::Base
 
  get '/attack' do
    @game = Game.instance
-   @game.attack(@game.enemy)
+   @game.attack
     if @game.enemy.dead?
       redirect '/game_over'
     else
       erb(:attack)
     end
+ end
+
+ get '/poison' do
+   @game = Game.instance
+   @game.poison
+   if @game.enemy.dead?
+     redirect '/game_over'
+   else
+     erb(:attack)
+   end
  end
 
  post '/switch_turn' do
