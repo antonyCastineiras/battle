@@ -2,7 +2,7 @@ require_relative 'player'
 
 class Game
 
-  attr_reader :player
+  attr_reader :player, :current_player
 
   # def initialize(player = Player.new)
   #   @player = player
@@ -10,6 +10,7 @@ class Game
 
   def initialize(player_1, player_2)
     @players = [player_1, player_2]
+    @current_player = player_1
   end
 
   def player_1
@@ -21,7 +22,15 @@ class Game
   end
 
   def attack(player)
-    player.receive_damage
+    enemy.receive_damage
+  end
+
+  def enemy
+    @players.detect {|player| player != @current_player}
+  end
+
+  def switch_turn
+    @current_player = enemy
   end
 
 end

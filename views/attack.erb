@@ -1,7 +1,7 @@
-<p><%= @game.player_1.name %> attacked <%= @game.player_2.name %></p>
+<p><%= @game.current_player.name %> attacked <%= @game.enemy.name %></p>
 
 <p><%= @game.player_1.name %> - HP:<%= @game.player_1.hit_points %> : <%= @game.player_2.name %> - HP:<%= @game.player_2.hit_points %></p>
 
-<form action="/play">
+<form action="/switch_turn" method="post">
   <input type="submit" value="OK">
 </form>
