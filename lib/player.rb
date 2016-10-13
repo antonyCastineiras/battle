@@ -13,4 +13,8 @@ class Player
     @hit_points -= 10
   end
 
+  def dead?
+    @hit_points == 0
+  end
+
 end

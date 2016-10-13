@@ -25,5 +25,10 @@ describe Game do
     end
   end
 
-
+  # describe '#game over' do
+  #   it 'ends a game when a player HP reaches 0' do
+  #     allow(dead_player).to receive(:receive_damage)
+  #     expect(game.attack(dead_player)). to eq
+  #   end
+  # end
 end
