@@ -9,12 +9,12 @@ class Player
     @hit_points = hit_points
   end
 
-  def receive_damage
-    @hit_points -= 10
+  def receive_damage(n)
+    @hit_points -= n
   end
 
   def dead?
-    @hit_points == 0
+    @hit_points <= 0
   end
 
 end

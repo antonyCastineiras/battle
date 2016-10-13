@@ -29,7 +29,7 @@ class Game
   end
 
   def attack(player)
-    enemy.receive_damage
+    enemy.receive_damage(rand(5..10))
   end
 
   def enemy
