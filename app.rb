@@ -40,10 +40,20 @@ class Battle < Sinatra::Base
    end
  end
 
- post '/switch_turn' do
+ get '/switch_turn' do
   @game = Game.instance
   @game.switch_turn
   redirect '/play'
+ end
+
+ get '/skip_turn' do
+  @game = Game.instance
+  skip_turn = @game.skip_turn
+  if skip_turn.even?
+    redirect '/switch_turn'
+  else
+    redirect '/attack'
+  end
  end
 
  get '/game_over' do

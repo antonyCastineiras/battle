@@ -41,6 +41,10 @@ class Game
     @players.detect {|player| player != @current_player}
   end
 
+  def skip_turn
+    rand(20)
+  end
+
   def switch_turn
     @current_player = enemy
     if @current_player.poisoned == true

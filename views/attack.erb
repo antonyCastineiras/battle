@@ -2,6 +2,6 @@
 
 <p><%= @game.player_1.name %> - HP:<%= @game.player_1.hit_points %> : <%= @game.player_2.name %> - HP:<%= @game.player_2.hit_points %></p>
 
-<form action="/switch_turn" method="post">
+<form action="/switch_turn" method="get">
   <input type="submit" value="OK">
 </form>
