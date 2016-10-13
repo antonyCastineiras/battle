@@ -9,6 +9,6 @@ feature 'Enter names' do
 
   it 'shows the players HP' do
     sign_in_and_play
-    expect(page).to have_content ("Larry :50HP")
+    expect(page).to have_content ("Larry - HP:50")
   end
 end
