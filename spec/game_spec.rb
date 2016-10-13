@@ -1,14 +1,15 @@
 require 'game'
 
 describe Game do
-  let(:game) { Game.new }
-  let(:player1) { double(:player) }
-  let(:player2) { double(:player) }
+  let(:player_1) { double(:player) }
+  let(:player_2) { double(:player) }
+  let(:game) { Game.new(player_1, player_2) }
+
 
   describe '#attack' do
     it 'damages the player' do
-      expect(player2).to receive(:receive_damage)
-      game.attack(player2)
+      allow(player_2).to receive(:receive_damage)
+      game.attack(player_2)
     end
   end
 
