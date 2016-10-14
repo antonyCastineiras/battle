@@ -1,6 +1,10 @@
-source 'https://rubygems.org'
-ruby '2.3.1'
+source "http://rubygems.org"
 
-gem 'rspec-sinatra'
-gem 'sinatra'
-gem 'capybara'
+group :development, :test do
+  gem "rspec"
+  gem "sinatra"
+  gem "rspec-sinatra"
+  gem "capybara"
+  gem "shotgun"
+end
+
