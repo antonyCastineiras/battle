@@ -45,6 +45,15 @@ class Game
     end
   end
 
+  def poison_current_target
+    target_player.become_poisoned if rand(10).even?
+    if target_player.poisoned
+      "#{current_player.name} poisoned #{target_player.name}"
+    else
+      "#{current_player.name} try to poison #{target_player.name} but failed"
+    end
+  end
+
   def sleep_current_target
     target_player.sleep
     @over = target_player.dead?

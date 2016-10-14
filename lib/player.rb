@@ -1,7 +1,7 @@
 require_relative 'game'
 
 class Player
-  attr_reader :name, :hit_points, :missing_turn
+  attr_reader :name, :hit_points, :missing_turn, :poisoned
 
   DEFAULT_HP = 100
 
@@ -9,6 +9,7 @@ class Player
     @name = name
     @hit_points = hit_points
     @missing_turn = false
+    @poisoned = false
   end
 
   def dead?
@@ -27,6 +28,14 @@ class Player
   def sleep
     @hit_points -= (random_damage/4)+5
     @missing_turn = (1..6).include?(random_chance)
+  end
+
+  def become_poisoned
+    @poisoned = true
+  end
+
+  def poison_damage
+    @hit_points -= random_damage / 5
   end
 
   def heal

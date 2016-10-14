@@ -1,0 +1,13 @@
+body {
+	background-color : #000;
+	color: #fff;
+	text-align: center;
+	font-family : 'Taviraj', serif;
+}
+
+body h1 {
+	font-family : 'Bungee Inline', cursive;
+	font-size : 60px;
+}
+
+body input:last-child

@@ -63,6 +63,12 @@ class Battle < Sinatra::Base
     erb(:attack)
   end
 
+  get '/poison' do
+    @last_move = @game.poison_current_target
+    @target_hp = @game.target_hp
+    erb(:attack)
+  end
+
   get '/heal' do
     @last_move = @game.heal_current_player
     @target_hp = @game.current_hp
@@ -70,6 +76,7 @@ class Battle < Sinatra::Base
   end
 
   post '/attack' do
+    @game.target_player.poison_damage if @game.target_player.poisoned 
     @game.switch
     redirect '/play'
   end

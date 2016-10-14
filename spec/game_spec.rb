@@ -107,4 +107,12 @@ describe Game do
       expect(subject.target_player).to eq player2
     end
   end
+
+  describe '#poison_current_target' do
+    it 'poisons the current target' do
+      allow(player1).to receive(:poisoned).and_return true
+      subject.poison_current_target
+      expect(player1.poisoned).to eq true
+    end
+  end
 end
