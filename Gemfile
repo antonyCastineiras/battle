@@ -1,8 +1,9 @@
 source "http://rubygems.org"
 
+gem "sinatra"
+
 group :development, :test do
   gem "rspec"
-  gem "sinatra"
   gem "rspec-sinatra"
   gem "capybara"
   gem "shotgun"
