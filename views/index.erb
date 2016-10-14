@@ -1,19 +1,31 @@
+<link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" href="css/style.css">
 <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Taviraj" rel="stylesheet">
 <body>
   <h1>Battle!</h1>
-  <h2>Sign in to play</h2>
+  <h2>Choose your hero!</h2>
   <form action="/names" method="post">
-    <label for="player1_name">
-      Player 1:
-      <input type="text" name="player1_name">
-    </label><br/></br/>
-
-    <label for="player2_name">
-      Player 2:
-      <input type="text" name="player2_name">
-    </label><br/><br/>
-    
-    <input type="submit" value="Submit Players">
+    <label for="batman">
+      <input id="batman" type="radio" name="hero" value="batman">
+    </label>
+    <label for="superman">
+      <input type="radio" name="hero" value="superman">    
+    </label>
+    <label for="spiderman">
+      <input type="radio" name="hero" value="spiderman">    
+    </label>
+    <label for="joker">
+      <input id="joker" type="radio" name="villain" value="joker">
+    </label>
+    <label for="deadpool">
+      <input type="radio" name="villain" value="deadpool">    
+    </label>
+    <label for="green_goblin">
+      <input type="radio" name="villain" value="green_goblin">    
+    </label>
+    <label for="submit">
+      <input type="submit" value="Choose Fighters">
+    </label>
   </form>
 </body>
+

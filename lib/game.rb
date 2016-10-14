@@ -1,12 +1,13 @@
 class Game
-  attr_reader :current_player, :target_player
+  attr_reader :current_player 
+  attr_accessor :target_player
 
-  def initialize(player1, player2)
+  def initialize(player1, player2=nil)
     @players = [player1, player2]
     @target_player = player2
     @current_player = player1
     @over = false
-    @auto = player2.name == :computer
+    #@auto = player2.name == :computer
   end
 
   def auto?
@@ -17,8 +18,8 @@ class Game
     @game
   end
 
-  def self.create(player1, player2)
-    @game = Game.new(player1, player2)
+  def self.create(player1, player2=nil)
+    @game = Game.new(player1,player2)
   end
 
   def player1
